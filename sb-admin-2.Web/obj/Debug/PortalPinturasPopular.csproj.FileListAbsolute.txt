@@ -78,3 +78,9 @@ D:\portal\sb-admin-2.Web\obj\Debug\PortalPinturasPopular.csproj.CoreCompileInput
 D:\portal\sb-admin-2.Web\obj\Debug\PortalPinturasPopular.csproj.CopyComplete
 D:\portal\sb-admin-2.Web\obj\Debug\sb-admin-2.Web.dll
 D:\portal\sb-admin-2.Web\obj\Debug\sb-admin-2.Web.pdb
+D:\portal\sb-admin-2.Web\bin\ExcelDataReader.dll
+D:\portal\sb-admin-2.Web\bin\ExcelDataReader.pdb
+D:\portal\sb-admin-2.Web\bin\ExcelDataReader.xml
+D:\portal\sb-admin-2.Web\bin\ExcelDataReader.DataSet.dll
+D:\portal\sb-admin-2.Web\bin\ExcelDataReader.DataSet.pdb
+D:\portal\sb-admin-2.Web\bin\ExcelDataReader.DataSet.xml
