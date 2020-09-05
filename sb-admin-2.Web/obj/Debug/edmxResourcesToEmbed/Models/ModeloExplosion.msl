@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DES_POPULARModelStoreContainer" CdmEntityContainer="DES_POPULAREntities3">
+    <EntitySetMapping Name="tblExcelData">
+      <EntityTypeMapping TypeName="DES_POPULARModel.tblExcelData">
+        <MappingFragment StoreEntitySet="tblExcelData">
+          <ScalarProperty Name="Fecha_creacion" ColumnName="Fecha_creacion" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Itemkey_sku" ColumnName="Itemkey_sku" />
+          <ScalarProperty Name="ItemKey" ColumnName="ItemKey" />
+          <ScalarProperty Name="OrigenExcel" ColumnName="OrigenExcel" />
+          <ScalarProperty Name="Mes_Inicial" ColumnName="Mes_Inicial" />
+          <ScalarProperty Name="Mes_1" ColumnName="Mes_1" />
+          <ScalarProperty Name="Mes_2" ColumnName="Mes_2" />
+          <ScalarProperty Name="Mes_3" ColumnName="Mes_3" />
+          <ScalarProperty Name="Mes_4" ColumnName="Mes_4" />
+          <ScalarProperty Name="Mes_5" ColumnName="Mes_5" />
+          <ScalarProperty Name="Mes_6" ColumnName="Mes_6" />
+          <ScalarProperty Name="Mes_7" ColumnName="Mes_7" />
+          <ScalarProperty Name="Mes_8" ColumnName="Mes_8" />
+          <ScalarProperty Name="Mes_9" ColumnName="Mes_9" />
+          <ScalarProperty Name="Mes_10" ColumnName="Mes_10" />
+          <ScalarProperty Name="Mes_11" ColumnName="Mes_11" />
+          <ScalarProperty Name="Mes_12" ColumnName="Mes_12" />
+          <ScalarProperty Name="Usuario_creacion_" ColumnName="Usuario_creacion " />
+          <ScalarProperty Name="Location_" ColumnName="Location " />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="VALIDAR" FunctionName="DES_POPULARModel.Store.VALIDAR" />
+  </EntityContainerMapping>
+</Mapping>

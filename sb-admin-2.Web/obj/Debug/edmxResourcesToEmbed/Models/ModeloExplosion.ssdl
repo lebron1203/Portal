@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DES_POPULARModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblExcelData">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Itemkey_sku" Type="varchar" MaxLength="50" />
+    <Property Name="ItemKey" Type="varchar" MaxLength="50" />
+    <Property Name="OrigenExcel" Type="varchar" MaxLength="10" />
+    <Property Name="Mes_Inicial" Type="varchar" MaxLength="50" />
+    <Property Name="Mes_1" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_2" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_3" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_4" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_5" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_6" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_7" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_8" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_9" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_10" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_11" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Mes_12" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Usuario_creacion " Type="varchar" MaxLength="10" />
+    <Property Name="Location " Type="varchar" MaxLength="10" />
+    <Property Name="Fecha_creacion" Type="datetime" />
+  </EntityType>
+  <Function Name="VALIDAR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DES_POPULARModelStoreContainer">
+    <EntitySet Name="tblExcelData" EntityType="Self.tblExcelData" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DES_POPULARModel1StoreContainer" CdmEntityContainer="DES_POPULAREntities2">
+    <EntitySetMapping Name="USUARIOS">
+      <EntityTypeMapping TypeName="DES_POPULARModel1.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIOS">
+          <ScalarProperty Name="Campo_" ColumnName="Campo " />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
