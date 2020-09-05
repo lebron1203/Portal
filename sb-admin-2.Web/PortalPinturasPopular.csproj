@@ -951,6 +951,7 @@
     <Folder Include="Doc\" />
     <Folder Include="Entity\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\Excel\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
