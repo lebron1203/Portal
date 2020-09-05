@@ -1,7 +1,9 @@
 ﻿using ExcelDataReader;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -108,7 +110,7 @@ namespace Portal.Web.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("File", "This file format is not supported");
+                        ModelState.AddModelError("File", "Este formato de archivo no es soportado");
                         return View();
                     }
 
@@ -122,16 +124,61 @@ namespace Portal.Web.Controllers
                         }
                     });
 
+
+                    DataTable dtable = result.Tables[0];
+                    //linea de insercion 
+                    using (SqlConnection conn = new SqlConnection("Data Source=MYPC;Initial Catalog=Productos;Integrated Security=True"))
+                    {
+                        conn.Open();
+
+                        string query = "INSERT INTO tblExcelData (Itemkey_sku) VALUES (@param1)";
+                        SqlCommand cmd = new SqlCommand(query, conn);
+
+
+                        foreach (DataRow row in dtable.Rows)
+                        {
+
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddWithValue("@param1", row.ItemArray[0]);
+                            //cmd.Parameters.AddWithValue("@param2", row[1]);
+
+                            cmd.ExecuteNonQuery();
+
+
+                        }
+
+
+                    }
+
+
+
                     return View(result.Tables[0]);
+
+                    //continuacion de datatable//
+
+
+
+
+
+
+
+                    //fin de insercion de data 
+
                 }
+
+
                 else
                 {
-                    ModelState.AddModelError("File", "Please Upload Your file");
+                    ModelState.AddModelError("File", "Favor seleccione su archivo");
                 }
+
+
             }
             return View();
         }
 
+
+       
 
     }
 }
