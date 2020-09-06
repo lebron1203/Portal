@@ -13,7 +13,7 @@ namespace Portal.Web.Domain
             var menu = new List<Navbar>();
             menu.Add(new Navbar { Id = 1, nameOption = "APLICACIONES", controller = "Home", action = "Index", imageClass = "fa fa-dashboard fa-fw", status = true, isParent = false, parentId = 0 });
             menu.Add(new Navbar { Id = 2, nameOption = "Reportes", imageClass = "fa fa fa-file-excel-o", status = true, isParent = true, parentId = 0 });
-            menu.Add(new Navbar { Id = 3, nameOption = "Explosion Materiales", controller = "Home", action = "ExplosionExcel", status = true, isParent = false, parentId = 2 });
+            menu.Add(new Navbar { Id = 3, nameOption = "Explosion Materiales", controller = "Home", action = "Upload", status = true, isParent = false, parentId = 2 });
             menu.Add(new Navbar { Id = 4, nameOption = "Recorrido", controller = "Home", action = "MorrisCharts", status = true, isParent = false, parentId = 2 });
             menu.Add(new Navbar { Id = 5, nameOption = "Tables", controller = "Home", action = "Tables", imageClass = "fa fa-table fa-fw", status = true, isParent = false, parentId = 0 });
             menu.Add(new Navbar { Id = 6, nameOption = "Forms", controller = "Home", action = "Forms", imageClass = "fa fa-edit fa-fw", status = true, isParent = false, parentId = 0 });

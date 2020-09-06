@@ -2,6 +2,7 @@
 using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
@@ -124,23 +125,48 @@ namespace Portal.Web.Controllers
                         }
                     });
 
+                  
+                   DataTable dtable = result.Tables[0];
 
-                    DataTable dtable = result.Tables[0];
                     //linea de insercion 
-                    using (SqlConnection conn = new SqlConnection("Data Source=MYPC;Initial Catalog=Productos;Integrated Security=True"))
+                    using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["conexion"].ToString()))
                     {
                         conn.Open();
 
-                        string query = "INSERT INTO tblExcelData (Itemkey_sku) VALUES (@param1)";
+                        string query = "INSERT INTO tblExcelData (Itemkey_sku,ItemKey,OrigenExcel,Mes_Inicial,Mes_1,Mes_2,Mes_3,Mes_4,Mes_5,Mes_6,Mes_7,Mes_8,Mes_9,Mes_10,Mes_11,Mes_12,EmpCode,location_itemkey,formulaid_excel) VALUES (@Itemkey_sku,@ItemKey,@OrigenExcel,@Mes_Inicial,@Mes_1,@Mes_2,@Mes_3,@Mes_4,@Mes_5,@Mes_6,@Mes_7,@Mes_8,@Mes_9,@Mes_10,@Mes_11,@Mes_12,@EmpCode,@location_itemkey,@formulaid_excel)";
+
+
                         SqlCommand cmd = new SqlCommand(query, conn);
 
+                        var empcode = 25421;
+                        var location_itemkey = "PT-01";
+                        var formulaid = "FP-2013";
 
                         foreach (DataRow row in dtable.Rows)
                         {
 
                             cmd.Parameters.Clear();
-                            cmd.Parameters.AddWithValue("@param1", row.ItemArray[0]);
-                            //cmd.Parameters.AddWithValue("@param2", row[1]);
+                            cmd.Parameters.AddWithValue("@Itemkey_sku", row.ItemArray[0]);
+                            cmd.Parameters.AddWithValue("@ItemKey", row.ItemArray[0]);
+                            cmd.Parameters.AddWithValue("@OrigenExcel", row.ItemArray[0]);
+                            cmd.Parameters.AddWithValue("@Mes_Inicial", row.ItemArray[1]);
+                            cmd.Parameters.AddWithValue("@Mes_1", row.ItemArray[2]);
+                            cmd.Parameters.AddWithValue("@Mes_2", row.ItemArray[3]);
+                            cmd.Parameters.AddWithValue("@Mes_3", row.ItemArray[4]);
+                            cmd.Parameters.AddWithValue("@Mes_4", row.ItemArray[5]);
+                            cmd.Parameters.AddWithValue("@Mes_5", row.ItemArray[6]);
+                            cmd.Parameters.AddWithValue("@Mes_6", row.ItemArray[7]);
+                            cmd.Parameters.AddWithValue("@Mes_7", row.ItemArray[8]);
+                            cmd.Parameters.AddWithValue("@Mes_8", row.ItemArray[9]);
+                            cmd.Parameters.AddWithValue("@Mes_9", row.ItemArray[10]);
+                            cmd.Parameters.AddWithValue("@Mes_10", row.ItemArray[11]);
+                            cmd.Parameters.AddWithValue("@Mes_11", row.ItemArray[12]);
+                            cmd.Parameters.AddWithValue("@Mes_12", row.ItemArray[13]);                      
+                            cmd.Parameters.AddWithValue("@EmpCode", empcode);
+                            cmd.Parameters.AddWithValue("@location_itemkey", location_itemkey);
+                            cmd.Parameters.AddWithValue("@formulaid_excel", formulaid);
+
+
 
                             cmd.ExecuteNonQuery();
 
@@ -151,8 +177,9 @@ namespace Portal.Web.Controllers
                     }
 
 
-
                     return View(result.Tables[0]);
+
+
 
                     //continuacion de datatable//
 
